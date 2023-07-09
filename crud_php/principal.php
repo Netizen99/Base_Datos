@@ -8,8 +8,40 @@
         <!--CSS-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/646ac4fad6.js" crossorigin="anonymus"></script>
+
+        <style type="text/css">
+        table {
+            width:  100%;
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+        }
+        .scrollingTable {
+            width: auto;
+            overflow-y: auto;
+        }
+        </style>
+        <script type="text/javascript">
+            function makeTableScroll() {
+                // Constant retrieved from server-side via JSP
+                var maxRows = 10;
+
+                var table = document.getElementById('myTable');
+                var wrapper = table.parentNode;
+                var rowsInTable = table.rows.length;
+                var height = 0;
+                if (rowsInTable > maxRows) {
+                    for (var i = 0; i < maxRows; i++) {
+                        height += table.rows[i].clientHeight;
+                    }
+                    wrapper.style.height = height + "px";
+                }
+            }
+        </script>
+
     </head>
-    <body>
+    <body onload="makeTableScroll();">
     <section class="vh-100" style="background-color: #9A616D;">
         <script>
             function eliminar()
@@ -57,7 +89,8 @@
             <div class="col-8 p-4">
                 
             <button onclick = "location='index.php?'" value="boton_index" style="float: right;" class="btn btn-small btn-warning">Salir</button>
-            <table class="table">
+            <div class="scrollingTable">
+            <table class="table" id="myTable">
                 <thead class="bg-info">
                     <tr>
                     <th scope="col">ID</th>
@@ -91,6 +124,7 @@
                     
                 </tbody>
                 </table>
+            </div>
             </div>
         </div> 
         <!-- JS -->

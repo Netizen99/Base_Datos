@@ -37,12 +37,12 @@
 
                             <div class="form-outline mb-4">
                                 <h5>Usuario</h5>
-                                <input id="user" name="user" class="form-control form-control-lg" />
+                                <input id="user" name="user" class="form-control form-control-lg" value="Victor"/>
                             </div>
 
                             <div class="form-outline mb-4">
                                 <h5>Contraseña</h5>
-                                <input id="contra" name="contra" type="password" class="form-control form-control-lg" />
+                                <input id="contra" name="contra" type="password" class="form-control form-control-lg" value="victor123"/>
                             </div>
 
                             <div class="pt-1 mb-4">
@@ -63,5 +63,6 @@
             </div>
         </div>
         </section>
+        
     </body>
 </html>
