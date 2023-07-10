@@ -11,7 +11,7 @@
             $sql=$conexion->query(" select * from login where user='$user' and contra='$contra' ");
             if($datos=$sql->fetch_object())
             {
-                header("location:principal.php");
+                header("location:excursion.php");
             }else
             {
                 echo '<div class="alert alert-danger">ACCESO DENEGADO</div>';

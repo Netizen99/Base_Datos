@@ -17,8 +17,8 @@
             include "modelo/conexion.php";
             //include "controlador/ver_ciudad.php"
         ?>
-        <div class="container-fluid " style="background-color:aliceblue; border-radius: 25px" >
-        <form class="col-10 p-5" method="POST"> 
+        <div class="container-fluid " style="background-color:aliceblue; border-radius: 25px; width: 1400px;" >
+        <form class="col-10 p-5" method="POST" > 
                     
           <div class="container-fluid" style="width:850px;" >
 
@@ -62,6 +62,15 @@
             </div>
           </div>
           <h1>EMPIEZA CON UNA RESERVACION !!!</h1>
+          
+          <h1>Agregar Compañia de transportes !!!</h1>
+          <a href="compania_transportes.php?" class="btn btn-small btn-warning">Vamos o Añadir o Modificar una compañia :D</a>
+          <h1>Agregar un Guia !!!</h1>
+          <a href="guias.php?" class="btn btn-small btn-warning">Vamoso Añadirun Guia :D</a>
+          <h1>Agregar una Actividad !!!</h1>
+          <a href="chofer.php?" class="btn btn-small btn-warning">Vamos Añadir un Chofer :D</a>
+          <h1>Agregar un Chofer !!!</h1>
+          <a href="compania_transportes.php?" class="btn btn-small btn-warning">Vamos a Crear o Añadir una compañia :D</a>
         </form>
         </div>
         
@@ -71,9 +80,6 @@
           </div>
           
         </form>
-        
        </section>
-       
-       
     </body>
 </html>

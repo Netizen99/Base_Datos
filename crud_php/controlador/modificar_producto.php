@@ -4,7 +4,7 @@ if(!empty($_POST["btnregistrar"]))
 {
     if(!empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["dni"]) and !empty($_POST["fecha_nac"]) and !empty($_POST["correo"]))
     {
-        $id=$_POST["id"];
+        $id=$_POST["codigo"];
         $nombre=$_POST["nombre"];
         $apellido=$_POST["apellido"];
         $dni=$_POST["dni"];
