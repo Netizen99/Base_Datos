@@ -56,6 +56,8 @@
             include "controlador/eliminar_compania_transportes.php";
         ?>
         <div class="container-fluid row" style="background-color:aliceblue; border-radius: 25px" >
+        <!-- --------------------------------------------------------------------------------Compañia---------------------------------------------------------------------------------------------------------------------- -->
+
         <form class="col-4 p-3" method="POST">
         
         <h3 class="text-center text-secondary">Registro de Compañia</h3>
@@ -94,7 +96,7 @@
                     <th scope="col">TELEFONO</th>
                     <th scope="col">CORREO</th>
                     <th scope="col">PAG WEB</th>
-                    <th scope="col"></th>
+                    <th scope="col">ACCIONES</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -109,7 +111,8 @@
                                 <td><?= $datos->email ?></td>
                                 <td><?= $datos->webpage ?></td>
                                 <td>
-                                    <a href="modificar_compania_transportes.php?id=<?= $datos->codigo?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="transportes.php?codigo=<?= $datos->codigo?>" class="btn btn-small btn-warning"><i class="fa-sharp fa-solid fa-plus"></i></a>
+                                    <a href="modificar_compania_transportes.php?codigo=<?= $datos->codigo?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <a onclick="return eliminar()" href="compania_transportes.php?codigo=<?= $datos->codigo ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>

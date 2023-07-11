@@ -11,7 +11,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script></head>
     <body>
     <section class="vh-100" style="background-color: #9A616D;">
-        
+      <button onclick = "location='index.php?'" value="boton_index" style="float: right;" class="btn btn-small btn-warning">Salir</button>
         <h1 class="text-center p-3">Vista Principal</h1>
         <?php
             include "modelo/conexion.php";
@@ -19,7 +19,7 @@
         ?>
         <div class="container-fluid " style="background-color:aliceblue; border-radius: 25px; width: 1400px;" >
         <form class="col-10 p-5" method="POST" > 
-                    
+          
           <div class="container-fluid" style="width:850px;" >
 
             <div id="myCarousel" class="carousel slide" data-ride="carousel">

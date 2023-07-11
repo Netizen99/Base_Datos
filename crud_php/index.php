@@ -37,7 +37,7 @@
 
                             <div class="form-outline mb-4">
                                 <h5>Usuario</h5>
-                                <input id="user" name="user" class="form-control form-control-lg" value="Victor"/>
+                                <input id="user" name="user" class="form-control form-control-lg" value="victor"/>
                             </div>
 
                             <div class="form-outline mb-4">

@@ -2,7 +2,7 @@
 include "modelo/conexion.php";
 $codigo=$_GET["codigo"];
 
-$sql=$conexion->query(" select * from persona where codigo=$codigo ");
+$sql=$conexion->query(" select * from compania_transportes where codigo=$codigo ");
 
 ?>
 <html lang="en">
@@ -17,8 +17,8 @@ $sql=$conexion->query(" select * from persona where codigo=$codigo ");
     </head>
     <body>
         <form class="col-4 p-3 m-auto" method="POST">
-        <h3 class="text-center text-secondary">Modificar Productos</h3>
-        <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
+        <h3 class="text-center text-secondary">Modificar Compañia</h3>
+        <input type="hidden" name="codigo" value="<?= $_GET["codigo"] ?>">
             <?php
             include "controlador/modificar_compania_transportes.php";
                 //mientras traiga datos, se van a almacenar en la variable datos
@@ -26,20 +26,20 @@ $sql=$conexion->query(" select * from persona where codigo=$codigo ");
                 {?>
                     
                     <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Nombre de la empresa</label>
+                    <label for="exampleInputEmail1" class="form-label">Nombre de la compañia</label>
                     <input type="text" class="form-control" name="nombre" value="<?= $datos->nombre ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Telefono</label>
-                        <input type="text" class="form-control" name="telefono" value="<?= $datos->apellido ?>">
+                        <input type="text" class="form-control" name="telefono" value="<?= $datos->telefono ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Correo</label>
-                        <input type="text" class="form-control" name="correo" value="<?= $datos->correo ?>">
+                        <input type="text" class="form-control" name="email" value="<?= $datos->email ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Pag web (nombre)</label>
-                        <input type="text" class="form-control" name="webpage" value="<?= $datos->apellido ?>">
+                        <input type="text" class="form-control" name="webpage" value="<?= $datos->webpage ?>">
                     </div>
             <?php    }
 
