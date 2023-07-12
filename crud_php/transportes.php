@@ -54,15 +54,16 @@
         <?php
             include "modelo/conexion.php";
             include "controlador/eliminar_transporte.php";
-            $codigo=$_GET["codigo"];
-            $sql=$conexion->query(" select * from compania_transportes where codigo=$codigo ");
+            $data = $_GET['data'];
+            $valorArray = explode('_', $data);
+            $sql=$conexion->query(" SELECT * from compania_transportes where codigo=$valorArray[0] ");
             
         ?>
         <div class="container-fluid row" style="background-color:aliceblue; border-radius: 25px" >
         <form class="col-4 p-3" method="POST">
         
         <h3 class="text-center text-secondary">Registro de Transportes</h3>
-         <input type="hidden" name="codigo" value="<?= $_GET["codigo"] ?>">
+         <input type="hidden" name="data" value="<?= $_GET["data"] ?>">
             <?php
                 include "controlador/registro_transporte.php";
             ?>
@@ -92,7 +93,7 @@
                 {?>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Compañia Afiliada</label>
-                    <input type="text" class="form-control" name="fk_comp" value="<?= $datos->codigo ?>">
+                    <input type="fname" class="form-control" name="fk_comp" value="<?= $datos->codigo ?>">
                 </div>
                 <?php    }?>
                 
@@ -118,7 +119,10 @@
                 <tbody>
                     <?php
                         include "modelo/conexion.php";
-                        $sql=$conexion->query(" select * from transportes ");
+                        $data = $_GET['data'];
+                        $valorArray = explode('_', $data);
+                        $codigo = $valorArray[0];
+                        $sql=$conexion->query("SELECT * FROM transportes WHERE fk_comp = $codigo ");
                         while ($datos = $sql->fetch_object()){ ?>
                             <tr>
                                 <td><?= $datos->codigo_bus ?></td>
@@ -129,10 +133,9 @@
                                 <td><?= $datos->placa ?></td>
                                 <td><?= $datos->fk_comp ?></td>
                                 <td>
-                                    <a href="transportes.php?id=<?= $datos->codigo_bus?>" class="btn btn-small btn-warning"><i class="fa-sharp fa-solid fa-plus"></i></a>
+                                    <a href="alquileres.php?data=<?= $datos->codigo_bus?>" class="btn btn-small btn-warning"><i class="fa-sharp fa-solid fa-plus"></i></a>
                                     <a href="modificar_transportes.php?codigo_bus=<?= $datos->codigo_bus?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a onclick="return eliminar()" href="transportes.php?codigo_bus=<?= $datos->codigo_bus ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
-                                </td>
+                                    <a onclick="return eliminar()" href="transportes.php?data=<?= $datos->fk_comp ?>_<?= $datos->codigo_bus?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>                                </td>
                             </tr>
                         <?php    }
                     ?>

@@ -111,7 +111,7 @@
                                 <td><?= $datos->email ?></td>
                                 <td><?= $datos->webpage ?></td>
                                 <td>
-                                    <a href="transportes.php?codigo=<?= $datos->codigo?>" class="btn btn-small btn-warning"><i class="fa-sharp fa-solid fa-plus"></i></a>
+                                    <a href="transportes.php?data=<?= $datos->codigo?>" class="btn btn-small btn-warning"><i class="fa-sharp fa-solid fa-plus"></i></a>
                                     <a href="modificar_compania_transportes.php?codigo=<?= $datos->codigo?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <a onclick="return eliminar()" href="compania_transportes.php?codigo=<?= $datos->codigo ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                                 </td>

@@ -1,11 +1,12 @@
+
 <?php
 
 $data = $_GET['data'];
 $valorArray = explode('_', $data);
 
 if (count($valorArray) > 1) {
-    $codigo_bus = $valorArray[1];
-    $sql=$conexion->query(" delete from transportes where codigo_bus=$codigo_bus");
+    $numero = $valorArray[1];
+    $sql=$conexion->query(" delete from alquileres where numero=$numero");
     if($sql==1)
     {
         echo '<div class="alert alert-success">Transporte eliminado correctamente</div>';
